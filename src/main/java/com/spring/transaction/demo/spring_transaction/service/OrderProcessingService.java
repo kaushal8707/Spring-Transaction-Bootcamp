@@ -22,12 +22,13 @@ public class OrderProcessingService {
 
     /** By Default readOnly is false */
     /** Propagation deals with How Multiple Transactions can communicate with each other */
-    /** Isolation controls How one Transaction can see the changes made by another Transaction whether u want to read committed or un-committed data */
+    /** Isolation controls How one Transaction can see the changes made by another Transaction whether u want to read committed
+     * or un-committed data */
     // Below is the default behavior
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED)
     public Order placeAnOrder(Order order) {
 
-        //use-cases - steps to performed
+        //use-cases - steps to perform
         //get product inventory
         Product product = inventoryHandler.getProduct(order.getProductId());
         //validate product availability < (5)

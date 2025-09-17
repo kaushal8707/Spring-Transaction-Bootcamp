@@ -28,7 +28,7 @@ public class InventoryHandler {
         return inventoryRepository.save(product);
     }
 
-    public Product getProduct(int id) {
+    public Product getProduct(long id) {
         return inventoryRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Product not available with id - "+id));
     }
